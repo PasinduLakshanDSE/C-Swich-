@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace code3_Swich_
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Ente the Employee Name:");
+            String emname = Console.ReadLine();
+            Console.WriteLine("Enter the Department:");
+            String Department = Console.ReadLine();
+            Console.WriteLine("Enter the Ot Hours:");
+            int ot_hours = Convert.ToInt32(Console.ReadLine());
+
+           
+            double basicsalary, ot_rate;
+
+            switch (Department)
+            {
+                case "sales":
+                    basicsalary = 30000;
+                    ot_rate = 3000;
+                    break;
+
+                case "HR":
+                    basicsalary = 40000;
+                    ot_rate = 2500;
+                    break;
+
+                case "Account":
+                    basicsalary = 60000;
+                    ot_rate = 1500;
+                    break;
+
+                default:
+                    basicsalary = 50000;
+                    ot_rate = 4000;
+                    break;
+            
+            }
+            double final_salary = basicsalary + (ot_hours * ot_rate);
+            Console.WriteLine("Final Salary:" +final_salary);
+            Console.ReadKey();
+        }
+    }
+}
